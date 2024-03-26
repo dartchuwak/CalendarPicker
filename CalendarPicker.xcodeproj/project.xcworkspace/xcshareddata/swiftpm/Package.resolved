@@ -1,0 +1,33 @@
+{
+  "originHash" : "3a257943946fd4cff1a791d8edea682f040ad09e2cb0f7998c345b227d33a606",
+  "pins" : [
+    {
+      "identity" : "multidatepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/andersprenger/MultiDatePicker.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "709a1460c333b48f44e1167e19378c42cce927d7"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "a5e87a39cffdcc591f3203c11cfca68100d0b9a6",
+        "version" : "13.26.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift.git",
+      "state" : {
+        "revision" : "e7f82d1721d99c7149a0af3d0424df9070a1a646",
+        "version" : "10.48.1"
+      }
+    }
+  ],
+  "version" : 3
+}
