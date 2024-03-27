@@ -14,6 +14,9 @@
 		A33610912BA1DCB300FDFECE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33610902BA1DCB300FDFECE /* HomeView.swift */; };
 		A33610932BA1DD0B00FDFECE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33610922BA1DD0B00FDFECE /* HomeViewModel.swift */; };
 		A33610962BA1E16600FDFECE /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33610952BA1E16600FDFECE /* DataBaseService.swift */; };
+		A387BDCD2BB443F6009D45B9 /* NewCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387BDCC2BB443F6009D45B9 /* NewCaseView.swift */; };
+		A387BDD02BB44597009D45B9 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = A387BDCF2BB44597009D45B9 /* SwiftfulRouting */; };
+		A387BDD52BB44E16009D45B9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387BDD42BB44E16009D45B9 /* UIColor.swift */; };
 		A3B02D7C2BA1E53900136B18 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A3B02D7B2BA1E53900136B18 /* Realm */; };
 		A3B02D7E2BA1E53900136B18 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A3B02D7D2BA1E53900136B18 /* RealmSwift */; };
 		A3B02D842BA1EB5B00136B18 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B02D832BA1EB5B00136B18 /* CalendarViewModel.swift */; };
@@ -33,6 +36,8 @@
 		A33610902BA1DCB300FDFECE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A33610922BA1DD0B00FDFECE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A33610952BA1E16600FDFECE /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		A387BDCC2BB443F6009D45B9 /* NewCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCaseView.swift; sourceTree = "<group>"; };
+		A387BDD42BB44E16009D45B9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A3B02D832BA1EB5B00136B18 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		A3B02D862BA3145000136B18 /* DatesRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesRealm.swift; sourceTree = "<group>"; };
 		A3B02D882BA3149300136B18 /* CaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseObject.swift; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 				A3B02D7E2BA1E53900136B18 /* RealmSwift in Frameworks */,
 				A3B02D7C2BA1E53900136B18 /* Realm in Frameworks */,
 				A3E40BF22BAD671E00F1CBE0 /* MultiDatePicker in Frameworks */,
+				A387BDD02BB44597009D45B9 /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +79,7 @@
 		A33610812BA1DC1F00FDFECE /* CalendarPicker */ = {
 			isa = PBXGroup;
 			children = (
+				A387BDD12BB44DEE009D45B9 /* Helpers */,
 				A3B02D852BA3143600136B18 /* Model */,
 				A33610942BA1E14800FDFECE /* Services */,
 				A3B02D802BA1EB2700136B18 /* App */,
@@ -99,6 +106,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A387BDD12BB44DEE009D45B9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A387BDD22BB44DFD009D45B9 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A387BDD22BB44DFD009D45B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A387BDD42BB44E16009D45B9 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A3B02D7F2BA1EB1600136B18 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +134,7 @@
 		A3B02D802BA1EB2700136B18 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A3D8ED512BADB8D800AA08D3 /* Localizable.xcstrings */,
 				A33610822BA1DC1F00FDFECE /* CalendarPickerApp.swift */,
 			);
 			path = App;
@@ -121,6 +145,7 @@
 			children = (
 				A33610902BA1DCB300FDFECE /* HomeView.swift */,
 				A33610922BA1DD0B00FDFECE /* HomeViewModel.swift */,
+				A387BDCC2BB443F6009D45B9 /* NewCaseView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -129,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				A33610842BA1DC1F00FDFECE /* CalendarView.swift */,
-				A3D8ED512BADB8D800AA08D3 /* Localizable.xcstrings */,
 				A3B02D832BA1EB5B00136B18 /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
@@ -165,6 +189,7 @@
 				A3B02D7B2BA1E53900136B18 /* Realm */,
 				A3B02D7D2BA1E53900136B18 /* RealmSwift */,
 				A3E40BF12BAD671E00F1CBE0 /* MultiDatePicker */,
+				A387BDCF2BB44597009D45B9 /* SwiftfulRouting */,
 			);
 			productName = CalendarPicker;
 			productReference = A336107F2BA1DC1F00FDFECE /* CalendarPicker.app */;
@@ -198,6 +223,7 @@
 			packageReferences = (
 				A3B02D7A2BA1E53900136B18 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A3E40BF02BAD671E00F1CBE0 /* XCRemoteSwiftPackageReference "MultiDatePicker" */,
+				A387BDCE2BB44597009D45B9 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
 			);
 			productRefGroup = A33610802BA1DC1F00FDFECE /* Products */;
 			projectDirPath = "";
@@ -229,9 +255,11 @@
 				A3B02D842BA1EB5B00136B18 /* CalendarViewModel.swift in Sources */,
 				A33610912BA1DCB300FDFECE /* HomeView.swift in Sources */,
 				A3B02D872BA3145000136B18 /* DatesRealm.swift in Sources */,
+				A387BDCD2BB443F6009D45B9 /* NewCaseView.swift in Sources */,
 				A3D8ED502BADB21700AA08D3 /* CaseRealm.swift in Sources */,
 				A33610852BA1DC1F00FDFECE /* CalendarView.swift in Sources */,
 				A33610832BA1DC1F00FDFECE /* CalendarPickerApp.swift in Sources */,
+				A387BDD52BB44E16009D45B9 /* UIColor.swift in Sources */,
 				A33610962BA1E16600FDFECE /* DataBaseService.swift in Sources */,
 				A3B02D892BA3149300136B18 /* CaseObject.swift in Sources */,
 				A33610932BA1DD0B00FDFECE /* HomeViewModel.swift in Sources */,
@@ -366,19 +394,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarPicker/Preview Content\"";
 				DEVELOPMENT_TEAM = WQ62ZKQJPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = EventMark;
+				INFOPLIST_KEY_CFBundleDisplayName = "Event Mark";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,19 +430,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarPicker/Preview Content\"";
 				DEVELOPMENT_TEAM = WQ62ZKQJPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = EventMark;
+				INFOPLIST_KEY_CFBundleDisplayName = "Event Mark";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,12 +484,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A387BDCE2BB44597009D45B9 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.3.2;
+			};
+		};
 		A3B02D7A2BA1E53900136B18 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				kind = exactVersion;
-				version = 10.48.1;
+				version = 10.49.1;
 			};
 		};
 		A3E40BF02BAD671E00F1CBE0 /* XCRemoteSwiftPackageReference "MultiDatePicker" */ = {
@@ -475,6 +511,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A387BDCF2BB44597009D45B9 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A387BDCE2BB44597009D45B9 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
+		};
 		A3B02D7B2BA1E53900136B18 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3B02D7A2BA1E53900136B18 /* XCRemoteSwiftPackageReference "realm-swift" */;

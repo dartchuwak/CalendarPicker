@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     @Published var cases: [CaseObject] = []
 
-    func addNewCase(title: String) {
-        let newCase = CaseObject(id: UUID().uuidString, title: title)
+    func addNewCase(title: String, desctiption: String, color: Color) {
+        let newCase = CaseObject(id: UUID().uuidString, title: title, description: "", color: color)
         cases.append(newCase)
         saveCase(caseObject: newCase)
     }

@@ -19,10 +19,15 @@ struct CalendarView: View {
     let title: String
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             MultiDatePicker(anyDays: $vm.dates)
-            Text("Total in current month: \(vm.filterByMonth())")
-            Text("Total days picked: \(vm.dates.count)")
+                .accentColor(caseOb.color)
+Spacer()
+            VStack(alignment: .leading) {
+                Text("Total in current month: \(vm.filterByMonth())")
+                Text("Total days picked: \(vm.dates.count)")
+            }
+            .padding(.horizontal)
 
         }
         .id(id)
@@ -56,7 +61,7 @@ struct CalendarView: View {
 
 #Preview {
     NavigationStack {
-        CalendarView(caseOb: CaseObject(id: "", title: ""), title: "Прививка")
+        CalendarView(caseOb: CaseObject(id: "", title: "", description: "Описание", color: .cyan), title: "Прививка")
             .environmentObject(CalendarViewModel())
     }
 }

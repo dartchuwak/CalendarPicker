@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct HomeView: View {
     @EnvironmentObject var vm: HomeViewModel
+    @Environment(\.router) var router
     @State private var showingAlert = false
+    @State private var createNewCase = false
     @State private var name = ""
+    @State private var color: Color = .red
     var body: some View {
-        NavigationStack {
             VStack {
                 if !vm.cases.isEmpty {
                     VStack {
@@ -21,7 +24,12 @@ struct HomeView: View {
                                 NavigationLink {
                                     CalendarView(caseOb: caseObject, title: caseObject.title)
                                 } label: {
-                                    Text(caseObject.title)
+                                    HStack {
+                                        Text(caseObject.title)
+                                        Spacer()
+                                        Image(systemName: "circle.fill")
+                                            .foregroundStyle(caseObject.color)
+                                    }
                                 }
                             }
                             .onDelete(perform: { indexSet in
@@ -45,7 +53,13 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        showingAlert.toggle()
+                       // showingAlert.toggle()
+                        createNewCase.toggle()
+                        router.showScreen(.sheet) {
+                            
+                        } destination: { _ in
+                            NewCaseView()
+                        }
                     }, label: {
                         Image(systemName: "plus.circle")
                     })
@@ -60,23 +74,10 @@ struct HomeView: View {
                     })
                 }
             }
-            .alert("Enter your name", isPresented: $showingAlert) {
-                TextField("Enter your name", text: $name)
-                Button(action: {
-                    vm.addNewCase(title: name)
-                    self.name = ""
-                }, label: {
-                    Text("OK")
-                })
-                Button("Cancel", role: .cancel) {
-                    showingAlert = false
-                }
-            }
             .onAppear {
                 vm.loadCases()
             }
         }
-    }
 }
 
 #Preview {

@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
 
 final class DataBaseService {
     static let shared = DataBaseService()
@@ -16,7 +17,7 @@ final class DataBaseService {
 
     func saveCase(caseObject: CaseObject) {
         let realm = try! Realm()
-        let caseObject = CaseRealm(title: caseObject.title, id: caseObject.id)
+        let caseObject = CaseRealm(title: caseObject.title, id: caseObject.id, description: caseObject.description, color: UIColor(caseObject.color))
 
         try! realm.write {
             realm.add(caseObject)
@@ -29,7 +30,7 @@ final class DataBaseService {
             let realm = try Realm()
             let objects = realm.objects(CaseRealm.self)
             let cases = objects.map {
-                CaseObject(id: $0.id, title: $0.title)
+                CaseObject(id: $0.id, title: $0.title, description: $0.description, color: Color(uiColor: UIColor.from(string: $0.color) ?? .cyan))
             }
             return Array(cases)
         } catch {

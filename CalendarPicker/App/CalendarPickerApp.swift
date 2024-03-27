@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 @main
 struct CalendarPickerApp: App {
@@ -16,9 +17,11 @@ struct CalendarPickerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environmentObject(mainViewModel)
-                .environmentObject(calendarViewModel)
+            RouterView { _ in
+                HomeView()
+            }
+            .environmentObject(mainViewModel)
+            .environmentObject(calendarViewModel)
         }
     }
 }

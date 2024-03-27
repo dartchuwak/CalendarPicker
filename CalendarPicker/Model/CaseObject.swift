@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CaseObject: Identifiable {
     var id: String
     let title: String
+    let description: String
+    let color: Color
 }
