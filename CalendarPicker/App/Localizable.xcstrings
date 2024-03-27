@@ -54,6 +54,9 @@
         }
       }
     },
+    "Legal" : {
+
+    },
     "No cases yet..." : {
       "localizations" : {
         "ru" : {
@@ -81,7 +84,13 @@
         }
       }
     },
-    "Pick up color" : {
+    "Privacy Policy" : {
+
+    },
+    "Reset" : {
+
+    },
+    "Reset all data" : {
 
     },
     "Save" : {
@@ -99,6 +108,9 @@
           }
         }
       }
+    },
+    "Settings & Legal" : {
+
     },
     "Title" : {
 

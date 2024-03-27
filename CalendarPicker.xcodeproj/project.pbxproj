@@ -17,6 +17,7 @@
 		A387BDCD2BB443F6009D45B9 /* NewCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387BDCC2BB443F6009D45B9 /* NewCaseView.swift */; };
 		A387BDD02BB44597009D45B9 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = A387BDCF2BB44597009D45B9 /* SwiftfulRouting */; };
 		A387BDD52BB44E16009D45B9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387BDD42BB44E16009D45B9 /* UIColor.swift */; };
+		A387BDD82BB48EE5009D45B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387BDD72BB48EE5009D45B9 /* SettingsView.swift */; };
 		A3B02D7C2BA1E53900136B18 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A3B02D7B2BA1E53900136B18 /* Realm */; };
 		A3B02D7E2BA1E53900136B18 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A3B02D7D2BA1E53900136B18 /* RealmSwift */; };
 		A3B02D842BA1EB5B00136B18 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B02D832BA1EB5B00136B18 /* CalendarViewModel.swift */; };
@@ -38,6 +39,7 @@
 		A33610952BA1E16600FDFECE /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		A387BDCC2BB443F6009D45B9 /* NewCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCaseView.swift; sourceTree = "<group>"; };
 		A387BDD42BB44E16009D45B9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A387BDD72BB48EE5009D45B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A3B02D832BA1EB5B00136B18 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		A3B02D862BA3145000136B18 /* DatesRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesRealm.swift; sourceTree = "<group>"; };
 		A3B02D882BA3149300136B18 /* CaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseObject.swift; sourceTree = "<group>"; };
@@ -122,9 +124,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A387BDD62BB48ED5009D45B9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A387BDD72BB48EE5009D45B9 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		A3B02D7F2BA1EB1600136B18 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A387BDD62BB48ED5009D45B9 /* Settings */,
 				A3B02D822BA1EB4000136B18 /* Calendar */,
 				A3B02D812BA1EB3400136B18 /* HomeView */,
 			);
@@ -261,6 +272,7 @@
 				A33610832BA1DC1F00FDFECE /* CalendarPickerApp.swift in Sources */,
 				A387BDD52BB44E16009D45B9 /* UIColor.swift in Sources */,
 				A33610962BA1E16600FDFECE /* DataBaseService.swift in Sources */,
+				A387BDD82BB48EE5009D45B9 /* SettingsView.swift in Sources */,
 				A3B02D892BA3149300136B18 /* CaseObject.swift in Sources */,
 				A33610932BA1DD0B00FDFECE /* HomeViewModel.swift in Sources */,
 			);

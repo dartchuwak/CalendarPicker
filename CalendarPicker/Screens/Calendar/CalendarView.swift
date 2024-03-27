@@ -31,10 +31,9 @@ Spacer()
 
         }
         .id(id)
+        .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.large)
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text(title)
-            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     vm.save(id: caseOb.id)

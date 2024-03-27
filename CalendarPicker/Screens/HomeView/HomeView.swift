@@ -11,6 +11,7 @@ import SwiftfulRouting
 struct HomeView: View {
     @EnvironmentObject var vm: HomeViewModel
     @Environment(\.router) var router
+    @Environment(\.colorScheme) var scheme
     @State private var showingAlert = false
     @State private var createNewCase = false
     @State private var name = ""
@@ -21,16 +22,17 @@ struct HomeView: View {
                     VStack {
                         List {
                             ForEach(vm.cases) { caseObject in
-                                NavigationLink {
-                                    CalendarView(caseOb: caseObject, title: caseObject.title)
-                                } label: {
                                     HStack {
                                         Text(caseObject.title)
                                         Spacer()
                                         Image(systemName: "circle.fill")
                                             .foregroundStyle(caseObject.color)
                                     }
-                                }
+                                    .onTapGesture {
+                                        router.showScreen(.push) { _ in
+                                            CalendarView(caseOb: caseObject, title: caseObject.title)
+                                        }
+                                    }
                             }
                             .onDelete(perform: { indexSet in
                                 indexSet.forEach { index in
@@ -39,12 +41,12 @@ struct HomeView: View {
                                     }
                             })
                         }
-                        .listStyle(.sidebar)
+                        .listStyle(.insetGrouped)
                     }
                 } else {
                     VStack {
                         Text("No cases yet...")
-                            .font(.headline)
+                            .font(.title)
                         Text("Click button above to add a new case!")
                             .font(.subheadline)
                     }
@@ -53,24 +55,29 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                       // showingAlert.toggle()
-                        createNewCase.toggle()
                         router.showScreen(.sheet) {
-                            
+
                         } destination: { _ in
                             NewCaseView()
                         }
                     }, label: {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus.app")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(scheme == .light ? .black : .white )
                     })
                 }
 
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
-                        vm.wipeRealm()
-                        vm.cases.removeAll()
+                        router.showScreen(.push) { _ in
+                            SettingsView()
+                        }
                     }, label: {
-                        Image(systemName: "trash.circle.fill")
+                        Image(systemName: "gear")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(scheme == .light ? .black : .white )
                     })
                 }
             }
@@ -81,6 +88,8 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
-        .environmentObject(HomeViewModel())
+    NavigationStack {
+        HomeView()
+            .environmentObject(HomeViewModel())
+    }
 }
