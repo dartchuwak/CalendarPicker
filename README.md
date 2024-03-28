@@ -1,4 +1,4 @@
-Event Merk App
+Event Mark App
 
 [App Store]([docs/CONTRIBUTING.md](https://apps.apple.com/ru/app/event-mark/id6479938370?l=en-GB))
 
