@@ -19,6 +19,8 @@ struct CalendarPickerApp: App {
         WindowGroup {
             RouterView { _ in
                 HomeView()
+                    .preferredColorScheme(.light)
+                    .accentColor(.black)
             }
             .environmentObject(mainViewModel)
             .environmentObject(calendarViewModel)

@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A324C06C2BB5CFD4006E6B76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A336107F2BA1DC1F00FDFECE /* CalendarPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33610822BA1DC1F00FDFECE /* CalendarPickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerApp.swift; sourceTree = "<group>"; };
 		A33610842BA1DC1F00FDFECE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		A33610812BA1DC1F00FDFECE /* CalendarPicker */ = {
 			isa = PBXGroup;
 			children = (
+				A324C06C2BB5CFD4006E6B76 /* Info.plist */,
 				A387BDD12BB44DEE009D45B9 /* Helpers */,
 				A3B02D852BA3143600136B18 /* Model */,
 				A33610942BA1E14800FDFECE /* Services */,
@@ -108,6 +110,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		A33D9ADB2BB5DFAD0035A335 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		A387BDD12BB44DEE009D45B9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +136,7 @@
 		A387BDD62BB48ED5009D45B9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A33D9ADB2BB5DFAD0035A335 /* Share */,
 				A387BDD72BB48EE5009D45B9 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -190,6 +200,7 @@
 				A336107B2BA1DC1F00FDFECE /* Sources */,
 				A336107C2BA1DC1F00FDFECE /* Frameworks */,
 				A336107D2BA1DC1F00FDFECE /* Resources */,
+				A324C06B2BB5CE47006E6B76 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -228,7 +239,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ru,
 			);
 			mainGroup = A33610762BA1DC1F00FDFECE;
 			packageReferences = (
@@ -257,6 +267,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A324C06B2BB5CE47006E6B76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A336107B2BA1DC1F00FDFECE /* Sources */ = {
@@ -406,11 +437,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarPicker/Preview Content\"";
 				DEVELOPMENT_TEAM = WQ62ZKQJPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalendarPicker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Event Mark";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -423,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.e.fishbein.eventmark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -442,11 +474,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CalendarPicker/Preview Content\"";
 				DEVELOPMENT_TEAM = WQ62ZKQJPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalendarPicker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Event Mark";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -459,7 +492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.e.fishbein.eventmark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

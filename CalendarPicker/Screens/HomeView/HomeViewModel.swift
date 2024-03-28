@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 final class HomeViewModel: ObservableObject {
-    @Published var cases: [CaseObject] = []
+    @Published var cases: [CaseObject] = [CaseObject(id: "", title: "New case", description: "", color: .purple)]
 
     func addNewCase(title: String, desctiption: String, color: Color) {
         let newCase = CaseObject(id: UUID().uuidString, title: title, description: "", color: color)

@@ -7,24 +7,22 @@
 
 import SwiftUI
 import SwiftfulRouting
+import  StoreKit
 
 struct SettingsView: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     @Environment(\.router) var router
     var body: some View {
         List {
+
             Section {
                 HStack {
-                    Image(systemName: "doc.append")
-                    Link("Privacy Policy", destination: URL(string: "https://eventmark-9700a.web.app/privacy.html")!)
-                        .foregroundStyle(Color.black)
+                    Image(systemName: "star")
+                    Text("Rate app")
                 }
-            } header: {
-                Text("Legal")
-            }
-
-
-            Section {
+                .onTapGesture {
+                    rateApp()
+                }
                 HStack {
                     Image(systemName: "arrow.triangle.2.circlepath")
                     Text("Reset all data")
@@ -38,15 +36,40 @@ struct SettingsView: View {
                     }
                 }
             } header: {
-                Text("Reset")
+                Text("APP")
+            }
+
+            Section {
+                HStack {
+                    Image(systemName: "doc.append")
+                    Link("Privacy Policy", destination: URL(string: "https://eventmark-9700a.web.app/privacy.html")!)
+                        .foregroundStyle(Color.black)
+                }
+            } header: {
+                Text("Legal")
             }
         }
         .navigationTitle("Settings & Legal")
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    router.dismissScreen()
+                }, label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.black)
+                })
+            }
+        })
+        .navigationBarBackButtonHidden()
+    }
+
+
+    func rateApp() {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
     }
 }
-
-//vm.wipeRealm()
-//vm.cases.removeAll()
 
 #Preview {
     NavigationStack {

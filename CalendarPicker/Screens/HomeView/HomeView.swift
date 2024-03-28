@@ -12,22 +12,30 @@ struct HomeView: View {
     @EnvironmentObject var vm: HomeViewModel
     @Environment(\.router) var router
     @Environment(\.colorScheme) var scheme
-    @State private var showingAlert = false
-    @State private var createNewCase = false
-    @State private var name = ""
-    @State private var color: Color = .red
     var body: some View {
             VStack {
                 if !vm.cases.isEmpty {
                     VStack {
-                        List {
+                        ScrollView(.vertical, showsIndicators: false) {
                             ForEach(vm.cases) { caseObject in
+
                                     HStack {
                                         Text(caseObject.title)
                                         Spacer()
-                                        Image(systemName: "circle.fill")
-                                            .foregroundStyle(caseObject.color)
+                                        Button(action: {
+                                            let caseId = caseObject.id
+                                            vm.deleteItem(id: caseId)
+                                        }, label: {
+                                            Image(systemName: "trash.circle")
+                                                .resizable()
+                                                .frame(width: 24, height: 24)
+
+                                        })
                                     }
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal)
+                                    .background(caseObject.color)
+                                    .cornerRadius(15)
                                     .onTapGesture {
                                         router.showScreen(.push) { _ in
                                             CalendarView(caseOb: caseObject, title: caseObject.title)
@@ -41,13 +49,15 @@ struct HomeView: View {
                                     }
                             })
                         }
-                        .listStyle(.insetGrouped)
+                        .padding(.top, 32)
+                        .padding(.horizontal)
+
                     }
                 } else {
                     VStack {
-                        Text("No cases yet...")
+                        Text("No events to track yet...")
                             .font(.title)
-                        Text("Click button above to add a new case!")
+                        Text("Click the button above to add a new event!")
                             .font(.subheadline)
                     }
                 }
@@ -91,5 +101,6 @@ struct HomeView: View {
     NavigationStack {
         HomeView()
             .environmentObject(HomeViewModel())
+            .preferredColorScheme(.light)
     }
 }

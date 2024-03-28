@@ -13,20 +13,19 @@ struct NewCaseView: View {
     @Environment(\.colorScheme) var scheme
     @State private var title = ""
     @State private var description = ""
-    @State private var selectedColor: Color = .purple
+    @State private var selectedColor: Color = .mint
+    @State private var isTextEmpty = false
 
     private let colors: [Color] = [
         .red,
-        .brown,
         .orange,
         .yellow,
         .green,
         .mint,
-        .teal,
         .cyan,
         .blue,
         .purple,
-        .indigo
+        .indigo,
     ]
 
     var body: some View {
@@ -34,13 +33,19 @@ struct NewCaseView: View {
             Spacer().frame(height: 32)
             TextField("Title", text: $title)
                 .padding()
+                .background(isTextEmpty ? .red.opacity(0.2) : .white)
+                .cornerRadius(15)
                 .overlay {
                     RoundedRectangle(cornerRadius: 15, style: .circular)
                         .stroke(lineWidth: 1)
                 }
                 .padding(.horizontal)
+                .onTapGesture {
+                    self.isTextEmpty = false
+                }
 
-            TextField("Description", text: $description)
+
+            TextField("Description (Optional)", text: $description)
                 .padding()
                 .overlay {
                     RoundedRectangle(cornerRadius: 15, style: .circular)
@@ -49,8 +54,7 @@ struct NewCaseView: View {
                 .padding(.horizontal)
             Text("Pick color")
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(alignment: .top) {
-                    Spacer(minLength: 16)
+                HStack(alignment: .top, spacing: 11) {
                     ForEach(colors, id: \.self) { color in
                         VStack {
                             if selectedColor == color {
@@ -70,23 +74,32 @@ struct NewCaseView: View {
                             withAnimation {
                                 selectedColor = color
                             }
-
                         }
-
                     }
                 }
             }
+            .padding(.horizontal)
             Spacer()
             Button(action: {
-                vm.addNewCase(title: title, desctiption: description, color: selectedColor)
-                router.dismissScreen()
+                if title.isEmpty {
+                    self.isTextEmpty = true
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        withAnimation {
+                            self.isTextEmpty = false
+                        }
+                    }
+                } else {
+                    vm.addNewCase(title: title, desctiption: description, color: selectedColor)
+                    router.dismissScreen()
+                }
+
             }, label: {
-                Text("Create a new case ")
+                Text("Create a new event ")
                     .foregroundStyle(scheme == .dark ? .black : .white)
                     .padding()
                     .background(scheme == .dark ? .white : .black)
                     .cornerRadius(15)
-
             })
 
 
@@ -94,7 +107,7 @@ struct NewCaseView: View {
         .toolbar {
 
         }
-        .navigationTitle("Create a new case")
+        .navigationTitle("Create a new event")
         .navigationBarTitleDisplayMode(.large)
     }
 }

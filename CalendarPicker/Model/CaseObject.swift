@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CaseObject: Identifiable {
     var id: String
-    let title: String
-    let description: String
-    let color: Color
+    var title: String
+    var description: String
+    var color: Color
 }

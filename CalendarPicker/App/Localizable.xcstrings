@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "APP" : {
+
+    },
     "Cancel" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -19,6 +22,7 @@
       }
     },
     "Click button above to add a new case!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -28,13 +32,16 @@
         }
       }
     },
-    "Create a new case" : {
+    "Click the button above to add a new event!" : {
 
     },
-    "Create a new case " : {
+    "Create a new event" : {
 
     },
-    "Description" : {
+    "Create a new event " : {
+
+    },
+    "Description (Optional)" : {
 
     },
     "Enter your name" : {
@@ -58,6 +65,7 @@
 
     },
     "No cases yet..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -66,6 +74,9 @@
           }
         }
       }
+    },
+    "No events to track yet..." : {
+
     },
     "OK" : {
       "extractionState" : "stale",
@@ -84,7 +95,13 @@
         }
       }
     },
+    "Pick color" : {
+
+    },
     "Privacy Policy" : {
+
+    },
+    "Rate app" : {
 
     },
     "Reset" : {

@@ -13,8 +13,8 @@ struct CalendarView: View {
 
     @EnvironmentObject var vm: CalendarViewModel
     @Environment(\.dismiss) var dismis
+    @Environment(\.router) var router
     @State var id = UUID()
-    @State var date: Set<DateComponents> = []
     let caseOb: CaseObject
     let title: String
 
@@ -22,7 +22,7 @@ struct CalendarView: View {
         VStack(alignment: .leading) {
             MultiDatePicker(anyDays: $vm.dates)
                 .accentColor(caseOb.color)
-Spacer()
+            Spacer()
             VStack(alignment: .leading) {
                 Text("Total in current month: \(vm.filterByMonth())")
                 Text("Total days picked: \(vm.dates.count)")
@@ -37,9 +37,18 @@ Spacer()
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     vm.save(id: caseOb.id)
-                        dismis()
+                    router.dismissScreen()
                 }, label: {
                     Text("Save")
+                        .tint(.black)
+                })
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    router.dismissScreen()
+                }, label: {
+                    Image(systemName: "chevron.left")
+                        .tint(.black)
                 })
             }
         }
@@ -48,13 +57,7 @@ Spacer()
             vm.load(id: caseOb.id)
             self.id = UUID()
         }
-        .onDisappear {
-            vm.save(id: caseOb.id)
-        }
-    }
-
-    func simplifiedDateComponents(from components: DateComponents) -> DateComponents {
-        return DateComponents(year: components.year, month: components.month, day: components.day)
+        .navigationBarBackButtonHidden()
     }
 }
 
