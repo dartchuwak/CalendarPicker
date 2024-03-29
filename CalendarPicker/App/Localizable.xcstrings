@@ -1,70 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "APP" : {
 
-    },
-    "Click the button above to add a new event!" : {
-
-    },
-    "Create a new event" : {
-
-    },
-    "Create a new event " : {
-
-    },
-    "Description (Optional)" : {
-
-    },
-    "Legal" : {
-
-    },
-    "No events to track yet..." : {
-
-    },
-    "Pick color" : {
-
-    },
-    "Privacy Policy" : {
-
-    },
-    "Rate app" : {
-
-    },
-    "Reset" : {
-
-    },
-    "Reset all data" : {
-
-    },
-    "Save" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сохранить"
-          }
-        }
-      }
-    },
-    "Settings & Legal" : {
-
-    },
-    "Title" : {
-
-    },
-    "Total days picked: %lld" : {
-
-    },
-    "Total in current month: %lld" : {
-
-    }
   },
   "version" : "1.0"
 }
