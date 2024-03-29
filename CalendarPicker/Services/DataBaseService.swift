@@ -11,8 +11,9 @@ import SwiftUI
 
 final class DataBaseService {
     static let shared = DataBaseService()
+
     private init() {
-realmMigration()
+        realmMigration()
     }
 
     func saveCase(caseObject: CaseObject) {
@@ -30,7 +31,7 @@ realmMigration()
             let realm = try Realm()
             let objects = realm.objects(CaseRealm.self)
             let cases = objects.map {
-                CaseObject(id: $0.id, title: $0.title, description: $0.description, color: Color(uiColor: UIColor.from(string: $0.color) ?? .cyan))
+                CaseObject(id: $0.id, title: $0.title, description: $0.desc, color: Color(uiColor: UIColor.from(string: $0.color) ?? .cyan))
             }
             return Array(cases)
         } catch {
@@ -58,18 +59,18 @@ realmMigration()
 
     func wipeRealm() {
         do {
-
-            // Опционально: удалить файлы Realm с диска для полного сброса.
-            let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
-            let realmURLs = [
-                realmURL,
-                realmURL.appendingPathExtension("lock"),
-                realmURL.appendingPathExtension("note"),
-                realmURL.appendingPathExtension("management")
-            ]
-            for URL in realmURLs {
-                try FileManager.default.removeItem(at: URL)
-            }
+            //
+            //            // Опционально: удалить файлы Realm с диска для полного сброса.
+            //            let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+            //            let realmURLs = [
+            //                realmURL,
+            //                realmURL.appendingPathExtension("lock"),
+            //                realmURL.appendingPathExtension("note"),
+            //                realmURL.appendingPathExtension("management")
+            //            ]
+            //            for URL in realmURLs {
+            //                try FileManager.default.removeItem(at: URL)
+            //            }
 
             let realm = try Realm()
             try realm.write {
@@ -114,24 +115,21 @@ realmMigration()
 
     func realmMigration() {
         let config = Realm.Configuration(
-            // Новая версия схемы должна быть больше предыдущей (например, если предыдущая была 0, новая будет 1)
-            schemaVersion: 1,
+            // Новая версия схемы должна быть больше предыдущей
+            schemaVersion: 2,
 
             // Блок миграции, который будет вызван автоматически, когда версия схемы увеличится
             migrationBlock: { migration, oldSchemaVersion in
-                // Мы здесь ещё не используем блок 'if', так как `oldSchemaVersion` == 0
                 if (oldSchemaVersion < 1) {
+                    migration.enumerateObjects(ofType: "CaseObject") { oldObject, newObject in
+                        newObject?["color"] = "1,1,1,1"
+                        newObject?["desc"] = ""
+                    }
                     // Ничего не делаем, Realm автоматически обнаружит новые или удалённые свойства
                     // и обновит схему самостоятельно
                 }
             }
         )
-
-        // Теперь установим эту конфигурацию как конфигурацию по умолчанию для Realm
         Realm.Configuration.defaultConfiguration = config
-
-        // Теперь Realm настроен с новой схемой и готов к использованию
-      //  let realm = try! Realm()
-
     }
 }

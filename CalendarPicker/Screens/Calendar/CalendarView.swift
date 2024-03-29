@@ -20,14 +20,18 @@ struct CalendarView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            Text(caseOb.description)
+                .padding(.horizontal)
+                .foregroundColor(.gray)
             MultiDatePicker(anyDays: $vm.dates)
                 .accentColor(caseOb.color)
+//            VStack(alignment: .leading) {
+//                Text("Total in current month: \(vm.filterByMonth())")
+//                Text("Total days picked: \(vm.dates.count)")
+//            }
+//            .font(.system(size: 24, weight: .bold))
+//            .padding(.horizontal)
             Spacer()
-            VStack(alignment: .leading) {
-                Text("Total in current month: \(vm.filterByMonth())")
-                Text("Total days picked: \(vm.dates.count)")
-            }
-            .padding(.horizontal)
 
         }
         .id(id)
@@ -63,7 +67,7 @@ struct CalendarView: View {
 
 #Preview {
     NavigationStack {
-        CalendarView(caseOb: CaseObject(id: "", title: "", description: "Описание", color: .cyan), title: "Прививка")
+        CalendarView(caseOb: CaseObject(id: "", title: "", description: "Описание события", color: .cyan), title: "Прививка")
             .environmentObject(CalendarViewModel())
     }
 }

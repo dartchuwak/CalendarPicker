@@ -17,8 +17,8 @@ struct HomeView: View {
                 if !vm.cases.isEmpty {
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
+                            Spacer().frame(height: 32)
                             ForEach(vm.cases) { caseObject in
-
                                     HStack {
                                         Text(caseObject.title)
                                         Spacer()
@@ -49,7 +49,6 @@ struct HomeView: View {
                                     }
                             })
                         }
-                        .padding(.top, 32)
                         .padding(.horizontal)
 
                     }
@@ -60,6 +59,7 @@ struct HomeView: View {
                         Text("Click the button above to add a new event!")
                             .font(.subheadline)
                     }
+                    .padding(.horizontal)
                 }
             }
             .toolbar {

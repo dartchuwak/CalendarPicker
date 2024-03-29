@@ -37,6 +37,8 @@ struct SettingsView: View {
                 }
             } header: {
                 Text("APP")
+            } footer: {
+                Text("App Version : \(getVersionNumber())")
             }
 
             Section {
@@ -68,6 +70,11 @@ struct SettingsView: View {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
         }
+    }
+
+    func getVersionNumber() -> String {
+        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else { return "" }
+        return appVersion
     }
 }
 

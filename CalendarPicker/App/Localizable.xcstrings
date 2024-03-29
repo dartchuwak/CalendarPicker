@@ -1,7 +1,54 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "APP" : {
 
+    },
+    "App Version : %@" : {
+
+    },
+    "Click the button above to add a new event!" : {
+
+    },
+    "Create a new event" : {
+
+    },
+    "Create a new event " : {
+
+    },
+    "Description (Optional)" : {
+
+    },
+    "Legal" : {
+
+    },
+    "No events to track yet..." : {
+
+    },
+    "Pick color" : {
+
+    },
+    "Privacy Policy" : {
+
+    },
+    "Rate app" : {
+
+    },
+    "Reset" : {
+
+    },
+    "Reset all data" : {
+
+    },
+    "Save" : {
+
+    },
+    "Settings & Legal" : {
+
+    },
+    "Title" : {
+
+    }
   },
   "version" : "1.0"
 }

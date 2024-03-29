@@ -10,8 +10,8 @@ import RealmSwift
 import SwiftUI
 
 class CaseRealm: Object {
-    @Persisted var title: String
-    @Persisted var desc: String
+    @Persisted var title: String = ""
+    @Persisted var desc: String = ""
     @Persisted var color: String
     @Persisted(primaryKey: true) var id: String
 
@@ -22,6 +22,7 @@ class CaseRealm: Object {
         self.desc = description
         let colorStr = color.asString
         self.color = colorStr
+        print(color)
     }
 }
 
