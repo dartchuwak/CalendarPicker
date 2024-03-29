@@ -14,7 +14,6 @@ struct CalendarPickerApp: App {
     @StateObject var mainViewModel = HomeViewModel()
     @StateObject var calendarViewModel = CalendarViewModel()
 
-
     var body: some Scene {
         WindowGroup {
             RouterView { _ in
@@ -24,6 +23,15 @@ struct CalendarPickerApp: App {
             }
             .environmentObject(mainViewModel)
             .environmentObject(calendarViewModel)
+            .onAppear {
+                DataBaseService.shared.realmMigration()
+                print(getVersionNumber())
+            }
         }
+    }
+
+    func getVersionNumber() -> String {
+        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else { return "" }
+        return appVersion
     }
 }

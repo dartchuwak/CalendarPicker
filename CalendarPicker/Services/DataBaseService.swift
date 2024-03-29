@@ -12,7 +12,7 @@ import SwiftUI
 final class DataBaseService {
     static let shared = DataBaseService()
     private init() {
-
+realmMigration()
     }
 
     func saveCase(caseObject: CaseObject) {
@@ -110,5 +110,28 @@ final class DataBaseService {
             print(error.localizedDescription)
             return []
         }
+    }
+
+    func realmMigration() {
+        let config = Realm.Configuration(
+            // Новая версия схемы должна быть больше предыдущей (например, если предыдущая была 0, новая будет 1)
+            schemaVersion: 1,
+
+            // Блок миграции, который будет вызван автоматически, когда версия схемы увеличится
+            migrationBlock: { migration, oldSchemaVersion in
+                // Мы здесь ещё не используем блок 'if', так как `oldSchemaVersion` == 0
+                if (oldSchemaVersion < 1) {
+                    // Ничего не делаем, Realm автоматически обнаружит новые или удалённые свойства
+                    // и обновит схему самостоятельно
+                }
+            }
+        )
+
+        // Теперь установим эту конфигурацию как конфигурацию по умолчанию для Realm
+        Realm.Configuration.defaultConfiguration = config
+
+        // Теперь Realm настроен с новой схемой и готов к использованию
+      //  let realm = try! Realm()
+
     }
 }

@@ -4,34 +4,6 @@
     "APP" : {
 
     },
-    "Cancel" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отмена"
-          }
-        }
-      }
-    },
-    "Click button above to add a new case!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нажмите на кнопку сверху, чтобы добавить новое отслеживание"
-          }
-        }
-      }
-    },
     "Click the button above to add a new event!" : {
 
     },
@@ -44,56 +16,11 @@
     "Description (Optional)" : {
 
     },
-    "Enter your name" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter title"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Введите название"
-          }
-        }
-      }
-    },
     "Legal" : {
 
     },
-    "No cases yet..." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пока пусто"
-          }
-        }
-      }
-    },
     "No events to track yet..." : {
 
-    },
-    "OK" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ok"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ок"
-          }
-        }
-      }
     },
     "Pick color" : {
 
@@ -137,23 +64,6 @@
     },
     "Total in current month: %lld" : {
 
-    },
-    "Total: %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Total: %lld"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всего: %lld"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"

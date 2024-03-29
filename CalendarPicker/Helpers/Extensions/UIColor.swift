@@ -9,20 +9,18 @@ import Foundation
 import SwiftUI
 
 extension UIColor {
-    // Convert UIColor to a string representation
     var asString: String {
         guard let components = self.cgColor.components, components.count >= 3 else {
-            return "1,1,1,1" // Default to white if the color cannot be converted
+            return "1,1,1,1"
         }
 
         let red = components[0]
         let green = components[1]
         let blue = components[2]
-        let alpha = components.count >= 4 ? components[3] : 1.0 // Assume alpha is 1 if not specified
+        let alpha = components.count >= 4 ? components[3] : 1.0
         return "\(red),\(green),\(blue),\(alpha)"
     }
 
-    // Initialize UIColor from a string representation
     static func from(string: String) -> UIColor? {
         let components = string.split(separator: ",").compactMap { CGFloat(Double($0) ?? 0.0) }
         guard components.count == 4 else { return nil }
