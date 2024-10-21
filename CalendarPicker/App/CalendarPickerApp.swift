@@ -5,12 +5,12 @@
 //  Created by Evgenii Mikhailov on 13.03.2024.
 //
 
+import RealmSwift
 import SwiftUI
 import SwiftfulRouting
 
 @main
-struct CalendarPickerApp: App {
-
+struct CalendarPickerApp: SwiftUI.App {
     @StateObject var mainViewModel = HomeViewModel()
     @StateObject var calendarViewModel = CalendarViewModel()
 
@@ -23,15 +23,6 @@ struct CalendarPickerApp: App {
             }
             .environmentObject(mainViewModel)
             .environmentObject(calendarViewModel)
-            .onAppear {
-                DataBaseService.shared.realmMigration()
-                print(getVersionNumber())
-            }
         }
-    }
-
-    func getVersionNumber() -> String {
-        guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else { return "" }
-        return appVersion
     }
 }

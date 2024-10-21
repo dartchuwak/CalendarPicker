@@ -25,14 +25,7 @@ struct CalendarView: View {
                 .foregroundColor(.gray)
             MultiDatePicker(anyDays: $vm.dates)
                 .accentColor(caseOb.color)
-//            VStack(alignment: .leading) {
-//                Text("Total in current month: \(vm.filterByMonth())")
-//                Text("Total days picked: \(vm.dates.count)")
-//            }
-//            .font(.system(size: 24, weight: .bold))
-//            .padding(.horizontal)
             Spacer()
-
         }
         .id(id)
         .navigationTitle(title)

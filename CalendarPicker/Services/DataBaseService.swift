@@ -13,7 +13,7 @@ final class DataBaseService {
     static let shared = DataBaseService()
 
     private init() {
-        realmMigration()
+        configRealm()
     }
 
     func saveCase(caseObject: CaseObject) {
@@ -59,19 +59,6 @@ final class DataBaseService {
 
     func wipeRealm() {
         do {
-            //
-            //            // Опционально: удалить файлы Realm с диска для полного сброса.
-            //            let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
-            //            let realmURLs = [
-            //                realmURL,
-            //                realmURL.appendingPathExtension("lock"),
-            //                realmURL.appendingPathExtension("note"),
-            //                realmURL.appendingPathExtension("management")
-            //            ]
-            //            for URL in realmURLs {
-            //                try FileManager.default.removeItem(at: URL)
-            //            }
-
             let realm = try Realm()
             try realm.write {
                 realm.deleteAll()
@@ -113,7 +100,7 @@ final class DataBaseService {
         }
     }
 
-    func realmMigration() {
+    func configRealm() {
         let config = Realm.Configuration(
             // Новая версия схемы должна быть больше предыдущей
             schemaVersion: 2,

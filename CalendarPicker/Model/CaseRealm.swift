@@ -25,8 +25,3 @@ class CaseRealm: Object {
         print(color)
     }
 }
-
-import SwiftUI
-
-
-
